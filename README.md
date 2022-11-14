@@ -7,10 +7,12 @@ When creating a project it is important to think about organization of your code
 ### 📚 User Stories
 
 - As a user, I can see a three by three grid game board on the page.
-    - Create an <h1>header</h1>
-    - Create gameBoard with nine squares 200px, with black boarder each, in a grid pattern.
+
+  - Create an <h1>header</h1>
+  - Create gameBoard with nine squares 200px, with black boarder each, in a grid pattern.
 
 - As a user, I can click on a square to mark it.
+  -create the onclick that will mark the location of the first mark.
 - As a user, my partner can click on a square after me and see their mark.
 - As a user, I can't click on a square that has already been marked.
 - As a user, when either my partner or I win the game (three squares in a row: horizontally, vertically, or diagonally) I can see a notice telling me which player won.
