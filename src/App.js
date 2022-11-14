@@ -18,7 +18,7 @@ const App = () => {
     "",
     "",
   ])
-  const [handleMark, setHandleMark] = useState()
+
 
   return (
     <>
