@@ -6,7 +6,7 @@ import Square from "./components/Square";
 // like the color box we want to clik the box and place an x inside instead of changing color
 
 const App = () => {
-  const [markName, setMarkName] = useState("");
+  const [markName, setMarkName] = useState("❌");
 
   const [gameBoard, setGameBoard] = useState([
     "",
@@ -22,8 +22,16 @@ const App = () => {
   const marks = ["❌", "🅾️"];
   const markSelector1 = (index) => {
     let newGameBoard = [...gameBoard];
-    newGameBoard[index] = "❌";
-    setGameBoard(newGameBoard);
+    // Create second player mark with boolean if else logic to state if X is last mark then next mark is O.
+     if(markName === "❌") {
+      newGameBoard[index] = "❌";
+      setMarkName ("🅾️");
+     }
+     else if(markName === "🅾️") {
+      newGameBoard[index] = "🅾️";
+        setMarkName ("❌");
+      }
+    setGameBoard(newGameBoard)
   };
   // give the ability for alternating players to choose the location of their marker.
   return (
