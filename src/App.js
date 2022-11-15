@@ -23,15 +23,17 @@ const App = () => {
   const markSelector1 = (index) => {
     let newGameBoard = [...gameBoard];
     // Create second player mark with boolean if else logic to state if X is last mark then next mark is O.
-     if(markName === "❌") {
-      newGameBoard[index] = "❌";
-      setMarkName ("🅾️");
-     }
-     else if(markName === "🅾️") {
+    // we need to move the else statements down and create a new if statement that checks to see if there is a value first and alert the players that they need to choose an empty square
+    if (newGameBoard[index] !== "") {
+      alert("Choose an empty square");
+    } else if (markName === "🅾️") {
       newGameBoard[index] = "🅾️";
-        setMarkName ("❌");
-      }
-    setGameBoard(newGameBoard)
+      setMarkName("❌");
+    } else if (markName === "❌") {
+      newGameBoard[index] = "❌";
+      setMarkName("🅾️");
+    }
+    setGameBoard(newGameBoard);
   };
   // give the ability for alternating players to choose the location of their marker.
   return (
