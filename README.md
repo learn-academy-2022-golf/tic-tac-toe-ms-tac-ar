@@ -5,6 +5,7 @@ This is a web game for two players on one device, taking turns. You will have to
 When creating a project it is important to think about organization of your code. It is best practice to separate and compartmentalize all the actions in your code. The square UI will be in its own component. App.js controls of all the data in state, renders the other components, and performs the game logic.
 
 ### 📚 User Stories
+Pseudocode below each user story:
 
 - As a user, I can see a three by three grid game board on the page.
 
@@ -12,8 +13,13 @@ When creating a project it is important to think about organization of your code
   - Create gameBoard with nine squares 200px, with black boarder each, in a grid pattern.
 
 - As a user, I can click on a square to mark it.
+
   -create the onclick that will mark the location of the first mark.
+
 - As a user, my partner can click on a square after me and see their mark.
+
+  - Create boolean if else logic to state if X is last mark then next mark is O.
+
 - As a user, I can't click on a square that has already been marked.
 - As a user, when either my partner or I win the game (three squares in a row: horizontally, vertically, or diagonally) I can see a notice telling me which player won.
 - As a user, I can't continue playing the game after the game has been won.
