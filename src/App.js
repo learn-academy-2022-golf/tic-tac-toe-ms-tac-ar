@@ -19,6 +19,38 @@ const App = () => {
     "",
     "",
   ]);
+  // we want to declare a winner once winning conditions are met. utilized the tic tact toe winner function from free code camp. changed squares to newGameBoard and created a new h2 line where the winner status will show
+  function calculateWinner(newGameBoard) {
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i];
+      if (
+        newGameBoard[a] &&
+        newGameBoard[a] === newGameBoard[b] &&
+        newGameBoard[a] === newGameBoard[c]
+      ) {
+        return newGameBoard[a];
+      }
+    }
+    return null;
+  }
+  // this calls upon the calculateWinner function and changes the status when the winning condition is met.
+  const winner = calculateWinner(gameBoard);
+  let status;
+  if (winner === "❌") {
+    status = "Winner Winner ❌";
+  } else if (winner === "🅾️") {
+    status = "Winner Winner for 🅾️";
+  }
   const marks = ["❌", "🅾️"];
   const markSelector1 = (index) => {
     let newGameBoard = [...gameBoard];
@@ -36,9 +68,11 @@ const App = () => {
     setGameBoard(newGameBoard);
   };
   // give the ability for alternating players to choose the location of their marker.
+  // the h2 line we added the status from line 84 to show under the h1 title
   return (
     <>
       <h1>Tic Tac Toe</h1>
+      <h2>{status}</h2>
       <div className="gameBoard">
         {gameBoard.map((value, index) => {
           return (
@@ -47,6 +81,7 @@ const App = () => {
               key={index}
               index={index}
               handleMark={markSelector1}
+              status={status}
             />
           );
         })}
